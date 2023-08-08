@@ -1,0 +1,47 @@
+Metadata-Version: 2.1
+Name: instapy
+Version: 0.1.0
+Summary: Package for applying filters to your images
+License: MIT License
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+
+# InstaPy Python package
+Intapy is a python package that applies filters to your photos. Instapy has three implementations that you are free to select from, consisting of a pure python implementation, a numpy implementation and a numba implementation. These all give the same results on your images, the difference between them being that they use different resources.
+
+Each implementation contains two filters: the black and white filter and the nostalgic sepia filter. You are free to select from either of these as well.
+
+## Installation
+To install InstaPy clone the repository to a local directory, locate to assignment 3 and run
+```
+pip install .
+```
+in terminal.
+
+## Usage
+```
+$ python -m instapy --help
+usage: instapy [-h] [--out OUT] [--gray] [--sepia] [--scale SCALE] [--implementation {python, numba, numpy}] 
+FILE
+
+positional arguments:
+    file                  The filename to apply filter to
+
+optional arguments:
+    -h, --help            show this message and exit
+    -o, --out OUT         The output filename
+    -g, -gray             Select gray filter
+    -se, --sepia          Select sepia filter
+    -sc SCALE, --scale SCALE
+                          Scale factor to resize image. e.g. scale=2 gives halves size
+    -i {python, numba, numpy}, --implementation {python, numba, numpy}
+                          The implementation
+```
+
+The default is set to black and white filter from the python implementation if options remain not specified.
+
+## Tests 
+You can run the tests to ensure that everything is working as they should. Locate to the test directory, and from there the following example of the command line to run tests on instapy
+```
+pytest
+```
